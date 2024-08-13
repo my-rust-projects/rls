@@ -26,12 +26,11 @@ impl Config {
 
     // TODO: Implament command flags
     pub fn run(config: Config) -> Result<(), ()> {
-        // let contents = config.contents;
-
         if config.contents == "NONE" {
             let dir_list = fs::read_dir(config.path).unwrap();
             for item in dir_list {
-                println!("{:?}", item.file_name());
+                let new_str = item.unwrap().file_name().into_string().unwrap();
+                println!("{new_str}");
             }
         } else {
             println!("FAIL");
