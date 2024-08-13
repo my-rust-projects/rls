@@ -31,7 +31,7 @@ impl Config {
         if config.contents == "NONE" {
             let dir_list = fs::read_dir(config.path).unwrap();
             for item in dir_list {
-                println!("{:?}", item);
+                println!("{:?}", item.file_name());
             }
         } else {
             println!("FAIL");
