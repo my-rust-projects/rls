@@ -1,6 +1,7 @@
 use std::env;
 use std::fs;
 use std::path::PathBuf;
+use colored::*;
 
 pub struct Config {
     pub path: PathBuf,
